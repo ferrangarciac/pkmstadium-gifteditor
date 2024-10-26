@@ -16,27 +16,39 @@
 	
 	<!-- APP -->
 		<div id="wrapper">
-		
-		<input type="file" id="fileInput">
-		<select id="pokemonList"></select>
-		<input type="checkbox" id="gorgerous" name="gorgerous" value="valorCheckbox">
-		<label for="gorgerous">Gorgerous Box</label>
-		<button id="saveFileBtn">Guardar Archivo</button>
-		
-		<div id="pkmGlobal" class="pkmInfo">
-			<div id="col1" class="col">
-				<div id="imgDiv" class="innerCol">
+			<div class="main-col">
+				<input type="file" id="fileInput" class="input-file">
+			</div>
+			
+			<div class="main-col">
+				<label for="pokemonList">Pokémon: </label>
+				<select id="pokemonList"></select>
+				
+				<input type="checkbox" id="gorgerous" name="gorgerous" value="valorCheckbox">
+				<label for="gorgerous">Gorgerous Box</label>
+			</div>
+			
+			<div class="main-col">
+				<button id="saveFileBtn">Guardar Archivo</button>
+			</div>
+			
+			<div class="main-col">
+				<div id="pkmGlobal" class="pkmInfo">
+					<div id="col1" class="col">
+						<div id="imgDiv" class="innerCol">
+						</div>
+					</div>
+					<div id="col2" class="col">
+						<div id="stats" class="innerCol">
+						</div>
+					</div>
+					<div id="col3" class="col">
+						<div id="moves" class="innerCol">
+						</div>
+					</div>
 				</div>
 			</div>
-			<div id="col2" class="col">
-				<div id="stats" class="innerCol">
-				</div>
-			</div>
-			<div id="col3" class="col">
-				<div id="moves" class="innerCol">
-				</div>
-			</div>
-		</div>
+			
 						
 			<!-- FOOTER -->
 			<footer>
