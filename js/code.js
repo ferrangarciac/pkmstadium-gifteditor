@@ -26,6 +26,25 @@ const lang_ES = [
 	"Refugio",							//19
 	"Fortaleza",						//20
 	"Amnesia",							//21
+	"La aplicación sólo ha sido probada\
+	con partidas salvadas en formato\
+	.fla. Se ha probado su \
+	funcionamiento con partidas PAL y \
+	USA. Aunque debería funcionar con \
+	partidas japonesas u otras \
+	regiones, no ha sido comprobado.",	//22
+	"Hay 9 Pokémon programados en el \
+	juego como regalo. Estos nueve \
+	tienen sus niveles y ataques \
+	prestablecidos. Aunque se puede \
+	seleccionar cualquier Pokémon, \
+	todos los que no sean esos nueve, \
+	tendrán nivel 5 y los ataques \
+	Placaje y Gruñido (a no ser que \
+	exista algún Pokémon programado, \
+	que finalmente no se incluyó en \
+	los premios. No han sido \
+	comprobados todos los Pokémon).",	//23
 ];
 lang_EN = [
 	"OT: ",								//00
@@ -347,44 +366,44 @@ function fillPkmData(){
 	
 	//Excepciones
 	switch(selectElement.selectedIndex){
-		case 1:
+		case 1:	//Bulbasaur
 			break;
-		case 4:
+		case 4:	//Charmander
 			level.innerHTML = language[2] + "5";
 			move1.innerHTML = language[10];
 			move2.innerHTML = language[11];
 			break;
-		case 7:
+		case 7:	//Squirtle
 			level.innerHTML = language[2] + "5";
 			move1.innerHTML = language[5];
 			move2.innerHTML = language[12];
 			break;
-		case 54:
+		case 54:	//Psyduck
 			level.innerHTML = language[2] + "15";
 			move1.innerHTML = language[5];
 			move2.innerHTML = language[21];
 			break;
-		case 106:
+		case 106:	//Hitmonlee
 			level.innerHTML = language[2] + "20";
 			move1.innerHTML = language[13];
 			move2.innerHTML = language[14];
 			break;
-		case 107:
+		case 107:	//Hitmonchan
 			level.innerHTML = language[2] + "20";
 			move1.innerHTML = language[15];
 			move2.innerHTML = language[16];
 			break;
-		case 133:
+		case 133:	//Eevee
 			level.innerHTML = language[2] + "25";
 			move1.innerHTML = language[5];
 			move2.innerHTML = language[17];
 			break;
-		case 138:
+		case 138:	//Omanyte
 			level.innerHTML = language[2] + "20";
 			move1.innerHTML = language[10];
 			move2.innerHTML = language[19];
 			break;
-		case 140:
+		case 140:	//Kabuto
 			level.innerHTML = language[2] + "20";
 			move1.innerHTML = language[10];
 			move2.innerHTML = language[20];
@@ -395,6 +414,13 @@ function fillPkmData(){
 window.addEventListener('load', function() {
 	
 	fillSelect();
+	
+	//Rellenamos las notas
+	var notes1 = document.getElementById("notes1");
+	notes1.innerHTML = language[22];
+	
+	var notes2 = document.getElementById("notes2");
+	notes2.innerHTML = language[23];
 
     document.getElementById('fileInput').addEventListener('change', function(event) {
         const file = event.target.files[0];
