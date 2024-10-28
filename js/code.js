@@ -466,6 +466,16 @@ window.addEventListener('load', function() {
                 var selectElement = document.getElementById('pokemonList');
 				selectElement.selectedIndex  = bytesInvertidos[29];
 				
+				//Desocultamos las opciones
+				var opt1 = document.getElementById('opt1');
+				var opt2 = document.getElementById('opt2');
+				var opt3 = document.getElementById('opt3');
+				
+				opt1.className = "main-col";
+				opt2.className = "main-col";
+				opt3.className = "main-col";
+				
+				
 				fillPkmData();
             };
 

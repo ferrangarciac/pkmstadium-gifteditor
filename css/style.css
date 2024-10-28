@@ -50,8 +50,8 @@ body{
     transition: all .25s ease-in;
 }
 
-.main-col{
-	
+.hidden{
+	display: none !important;
 }
 
 #gorgerous{
