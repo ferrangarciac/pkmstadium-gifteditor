@@ -70,8 +70,26 @@ lang_EN = [
 	"Withdraw",															//19
 	"Harden",															//20
 	"Amnesia",															//21
-	"",
-	"",
+	"The application has only been tested with saved games in .fla \
+	format. It has been tested with PAL and USA games. Although it \
+	should work with Japanese or other region games, but this has not \
+	been verified.",													//22
+	"There are 9 Pokémon programmed in the game as prizes. These ones \
+	have preset levels and moves. Although any Pokémon can be \
+	selected, all others outside of these nine will be at level 5 with \
+	the moves Tackle and Growl (unless there's a Pokémon that was \
+	programmed but ultimately not included as a reward. Not all \
+	Pokémon have been tested).",										//23
+	"The Pokémon specifically programmed as prizes are:\
+	<ul><li><img src='./img/sprites-box/1.png'></img>Bulbasaur</li><li>\
+	<img src='./img/sprites-box/4.png'>Charmander</li><li>\
+	<img src='./img/sprites-box/7.png'>Squirtle</li>\
+	<li><img src='./img/sprites-box/106.png'>Hitmonlee</li><li>\
+	<img src='./img/sprites-box/107.png'>Hitmonchan</li><li>\
+	<img src='./img/sprites-box/133.png'>Eevee</li>\
+	<li><img src='./img/sprites-box/138.png'>Omanyte</li><li>\
+	<img src='./img/sprites-box/140.png'>Kabuto</li><li>\
+	<img src='./img/sprites-box/54.png'>Psyduck</li></ul>",				//24
 ];
 
 var language = lang_ES;
@@ -420,21 +438,39 @@ function fillPkmData(){
 	}
 }
 
-window.addEventListener('load', function() {
-	
-	fillSelect();
-	
+function fillNotes(){
 	//Rellenamos las notas
 	var notes1 = document.getElementById("notes1");
+	notes1.innerHTML = ""
 	notes1.innerHTML = language[22];
 	
 	var notes2 = document.getElementById("notes2");
+	notes2.innerHTML = ""
 	notes2.innerHTML = language[23];
 	
 	var notes3 = document.getElementById("notes3");
+	notes3.innerHTML = ""
 	notes3.innerHTML = language[24];
-	
+}
 
+window.addEventListener('load', function() {
+	
+	fillSelect();
+	fillNotes();
+	
+	var en = document.getElementById('en');
+	var sp = document.getElementById('sp');
+	
+	en.addEventListener('click', function() {
+		language = lang_EN;
+		fillNotes();
+		fillPkmData();
+	});
+	sp.addEventListener('click', function() {
+		language = lang_ES;
+		fillNotes();
+		fillPkmData();
+	});
 
     document.getElementById('fileInput').addEventListener('change', function(event) {
         const file = event.target.files[0];
@@ -467,13 +503,9 @@ window.addEventListener('load', function() {
 				selectElement.selectedIndex  = bytesInvertidos[29];
 				
 				//Desocultamos las opciones
-				var opt1 = document.getElementById('opt1');
-				var opt2 = document.getElementById('opt2');
-				var opt3 = document.getElementById('opt3');
-				
-				opt1.className = "main-col";
-				opt2.className = "main-col";
-				opt3.className = "main-col";
+				var opt = document.getElementById('options');
+								
+				opt.className = "";
 				
 				
 				fillPkmData();

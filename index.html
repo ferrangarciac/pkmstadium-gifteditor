@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 	<head>
-		<title>Template</title>
+		<title>Pokémon Stadium Gift Editor</title>
 		<meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
 		<meta name="description" content=""/>
 		<meta name="keywords" content=""/>
-		<!--<link rel="shortcut icon" href="./favicon.png" type="image/png" sizes="16x16"/>
-		<link rel="shortcut icon" href="./logo192.png" type="image/png" sizes="192x192"/>-->
+		<link rel="shortcut icon" href="./img/logo.png" type="image/png" sizes="16x16"/>
+		<link rel="shortcut icon" href="./img/logo.png" type="image/png" sizes="192x192"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script type="text/javascript" src="./js/code.js"></script>
 	</head>
 	
 	<body>
 	<!-- HEADER -->
-		<header><img src="logo.png"></header>
+		<header></header>
 	
 	<!-- APP -->
 		<div id="wrapper">
+			<div id="header">
+				<img class="logo" src="./img/logo.png"></img>
+				<h1>Pokémon Stadium Gift Editor</h1>
+				<div id="lang">
+					<img id="en" class="language" src="./img/icons/en.png"></img>
+					<img id="sp" class="language" src="./img/icons/sp.png"></img>
+				</div>
+			</div>
+		
 			<div class="main-col">
 				<input type="file" id="fileInput" class="input-file">
 			</div>
 			
-			<div id="opt1" class="main-col hidden">
-				<label for="pokemonList">Pokémon: </label>
-				<select id="pokemonList"></select>
+			<div id="options" class="expand hidden">
+			
+				<div id="opt1" class="main-col">
+					<label for="pokemonList">Pokémon: </label>
+					<select id="pokemonList"></select>
+					
+					<input type="checkbox" id="gorgerous" name="gorgerous" value="valorCheckbox">
+					<label for="gorgerous">Gorgerous Box</label>
+				</div>
 				
-				<input type="checkbox" id="gorgerous" name="gorgerous" value="valorCheckbox">
-				<label for="gorgerous">Gorgerous Box</label>
-			</div>
-			
-			<div id="opt2"  class="main-col hidden">
-				<button id="saveFileBtn">Guardar Archivo</button>
-			</div>
-			
-			<div id="opt3" class="main-col hidden">
-				<div id="pkmGlobal" class="pkmInfo">
-					<div id="col1" class="col">
-						<div id="imgDiv" class="innerCol">
+				<div id="opt3" class="main-col">
+					<div id="pkmGlobal" class="pkmInfo">
+						<div id="col1" class="col">
+							<div id="imgDiv" class="innerCol">
+							</div>
+						</div>
+						<div id="col2" class="col">
+							<div id="stats" class="innerCol">
+							</div>
+						</div>
+						<div id="col3" class="col">
+							<div id="moves" class="innerCol">
+							</div>
 						</div>
 					</div>
-					<div id="col2" class="col">
-						<div id="stats" class="innerCol">
-						</div>
-					</div>
-					<div id="col3" class="col">
-						<div id="moves" class="innerCol">
-						</div>
-					</div>
+				</div>
+				
+				<div id="opt2"  class="main-col">
+					<button id="saveFileBtn">Save File</button>
 				</div>
 			</div>
 			
@@ -60,7 +72,7 @@
 						
 			<!-- FOOTER -->
 			<footer>
-				DBZT3 Toolbox <small>rev20190404</small> by <a href="/">Ferran Garcia</a>
+				PkmStdGiftEdit <small>rev241028</small> by <a href="/">Ferran Garcia</a>
 				<br />
 				<i class="icon heart"></i> <a href="https://www.paypal.me/ferrangc/3" target="_blank" rel="nofollow">Donate</a>
 			</footer>
