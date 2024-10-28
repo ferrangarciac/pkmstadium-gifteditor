@@ -4,71 +4,74 @@ let rangoExtraido = null;
 let bytesInvertidos = null; // Array invertido global
 
 const lang_ES = [
-	"EO: ",								//00
-	"ID: ",								//01
-	"Nivel: ",							//02
-	"Objeto: ",							//03	
-	"Movimientos: ",					//04
-	"Placaje",							//05
-	"Gruñido",							//06
-	"ESTADIO",							//07
-	"Caja Normal",						//08
-	"Caja Grande",						//09
-	"Arañazo",							//10
-	"Malicioso",						//11
-	"Látigo",							//12
-	"Doble Patada",						//13
-	"Meditación",						//14
-	"Puño Cometa",						//15
-	"Agilidad",							//16
-	"Ataque Arena",						//17
-	"Pistola Agua",						//18
-	"Refugio",							//19
-	"Fortaleza",						//20
-	"Amnesia",							//21
-	"La aplicación sólo ha sido probada\
-	con partidas salvadas en formato\
-	.fla. Se ha probado su \
-	funcionamiento con partidas PAL y \
-	USA. Aunque debería funcionar con \
-	partidas japonesas u otras \
-	regiones, no ha sido comprobado.",	//22
-	"Hay 9 Pokémon programados en el \
-	juego como regalo. Estos nueve \
-	tienen sus niveles y ataques \
-	prestablecidos. Aunque se puede \
-	seleccionar cualquier Pokémon, \
-	todos los que no sean esos nueve, \
-	tendrán nivel 5 y los ataques \
-	Placaje y Gruñido (a no ser que \
-	exista algún Pokémon programado, \
-	que finalmente no se incluyó en \
-	los premios. No han sido \
-	comprobados todos los Pokémon).",	//23
+	"EO: ",																//00
+	"ID: ",																//01
+	"Nivel: ",															//02
+	"Objeto: ",															//03	
+	"Movimientos: ",													//04
+	"Placaje",															//05
+	"Gruñido",															//06
+	"ESTADIO",															//07
+	"Caja Normal",														//08
+	"Caja Grande",														//09
+	"Arañazo",															//10
+	"Malicioso",														//11
+	"Látigo",															//12
+	"Doble Patada",														//13
+	"Meditación",														//14
+	"Puño Cometa",														//15
+	"Agilidad",															//16
+	"Ataque Arena",														//17
+	"Pistola Agua",														//18
+	"Refugio",															//19
+	"Fortaleza",														//20
+	"Amnesia",															//21
+	"La aplicación sólo ha sido probada	con partidas salvadas en \
+	formato .fla. Se ha probado su funcionamiento con partidas PAL y \
+	USA. Aunque debería funcionar con partidas japonesas u otras \
+	regiones, no ha sido comprobado.",									//22
+	"Hay 9 Pokémon programados en el juego como regalo. Estos nueve \
+	tienen sus niveles y ataques prestablecidos. Aunque se puede \
+	seleccionar cualquier Pokémon, todos los que no sean esos nueve, \
+	tendrán nivel 5 y los ataques Placaje y Gruñido (a no ser que \
+	exista algún Pokémon programado, que finalmente no se incluyó en \
+	los premios. No han sido comprobados todos los Pokémon).",			//23
+	"Los Pokémon específicamente programados para los regalos son: \
+	<ul><li><img src='./img/sprites-box/1.png'></img>Bulbasaur</li><li>\
+	<img src='./img/sprites-box/4.png'>Charmander</li><li>\
+	<img src='./img/sprites-box/7.png'>Squirtle</li>\
+	<li><img src='./img/sprites-box/106.png'>Hitmonlee</li><li>\
+	<img src='./img/sprites-box/107.png'>Hitmonchan</li><li>\
+	<img src='./img/sprites-box/133.png'>Eevee</li>\
+	<li><img src='./img/sprites-box/138.png'>Omanyte</li><li>\
+	<img src='./img/sprites-box/140.png'>Kabuto</li><li>\
+	<img src='./img/sprites-box/54.png'>Psyduck</li></ul>",				//24
 ];
 lang_EN = [
-	"OT: ",								//00
-	"ID: ",								//01
-	"Level: ",							//02
-	"Hold Item: ",						//03	
-	"Moves: ",							//04
-	"Tackle",							//05
-	"Growl",							//06
-	"Stadium",							//07
-	"Normal Box",						//08
-	"Gorgerous Box",					//09
-	"Scratch",							//10
-	"Leer",								//11
-	"Tail Whip",						//12
-	"Double Kick",						//13
-	"Miditate",							//14
-	"Comet Punch",						//15
-	"Agility",							//16
-	"Sand-Attack",						//17
-	"Water Gun",						//18
-	"Withdraw",							//19
-	"Harden",							//20
-	"Amnesia",							//21
+	"OT: ",																//00
+	"ID: ",																//01
+	"Level: ",															//02
+	"Hold Item: ",														//03	
+	"Moves: ",															//04
+	"Tackle",															//05
+	"Growl",															//06
+	"Stadium",															//07
+	"Normal Box",														//08
+	"Gorgerous Box",													//09
+	"Scratch",															//10
+	"Leer",																//11
+	"Tail Whip",														//12
+	"Double Kick",														//13
+	"Miditate",															//14
+	"Comet Punch",														//15
+	"Agility",															//16
+	"Sand-Attack",														//17
+	"Water Gun",														//18
+	"Withdraw",															//19
+	"Harden",															//20
+	"Amnesia",															//21
+	"",
+	"",
 ];
 
 var language = lang_ES;
@@ -366,6 +369,12 @@ function fillPkmData(){
 	
 	//Excepciones
 	switch(selectElement.selectedIndex){
+		case 0:
+			ot.innerHTML = "";
+			id.innerHTML = "";
+			level.innerHTML = "";
+			move1.innerHTML = "";
+			move2.innerHTML = "";
 		case 1:	//Bulbasaur
 			break;
 		case 4:	//Charmander
@@ -421,6 +430,11 @@ window.addEventListener('load', function() {
 	
 	var notes2 = document.getElementById("notes2");
 	notes2.innerHTML = language[23];
+	
+	var notes3 = document.getElementById("notes3");
+	notes3.innerHTML = language[24];
+	
+
 
     document.getElementById('fileInput').addEventListener('change', function(event) {
         const file = event.target.files[0];
