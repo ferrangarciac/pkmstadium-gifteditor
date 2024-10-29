@@ -52,6 +52,7 @@ body{
 	border-radius: 20px;
 	margin-left: 90px;
 	margin-top: 5px;
+	cursor: pointer;
 }
 
 .input-file{
