@@ -422,6 +422,9 @@ function fillPkmData(){
 			move1.innerHTML = language[15];
 			move2.innerHTML = language[16];
 			break;
+		case 133:	//Lapras
+			level.innerHTML = language[2] + "4";
+			break;
 		case 133:	//Eevee
 			level.innerHTML = language[2] + "25";
 			move1.innerHTML = language[5];
@@ -436,6 +439,9 @@ function fillPkmData(){
 			level.innerHTML = language[2] + "20";
 			move1.innerHTML = language[10];
 			move2.innerHTML = language[20];
+			break;
+		case 142:	//Aerodactyl
+			level.innerHTML = language[2] + "4";
 			break;
 	}
 }
