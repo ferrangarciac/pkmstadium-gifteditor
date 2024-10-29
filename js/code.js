@@ -422,7 +422,7 @@ function fillPkmData(){
 			move1.innerHTML = language[15];
 			move2.innerHTML = language[16];
 			break;
-		case 133:	//Lapras
+		case 131:	//Lapras
 			level.innerHTML = language[2] + "4";
 			break;
 		case 133:	//Eevee
