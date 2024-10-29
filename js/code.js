@@ -298,11 +298,13 @@ function arrayToHexString(array) {
 }
 
 // Función para guardar el archivo modificado
-function guardarArchivoModificado(byteArray, nombreArchivo = 'archivo_modificado.bin') {
+function guardarArchivoModificado(byteArray, nombreArchivo = 'pkmStadium_gift_.fla') {
     const blob = new Blob([byteArray], { type: 'application/octet-stream' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
+	var selectElement = document.getElementById('pokemonList');
     a.href = url;
+	nombreArchivo = 'pkmStadium_gift_' + pokeNames[selectElement.selectedIndex] + '.fla';
     a.download = nombreArchivo;
     a.click();
     URL.revokeObjectURL(url); // Liberar el objeto URL
